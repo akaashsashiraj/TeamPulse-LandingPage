@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 238 47% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 328 85% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 238 47% 57%;
+
+    --radius: 1rem;
+
+    /* TeamPulse Custom Colors */
+    --teampulse-purple: 238 47% 57%;
+    --teampulse-pink: 328 85% 70%;
+    --teampulse-blue: 210 100% 60%;
+    --teampulse-green: 150 70% 45%;
+    --teampulse-orange: 30 100% 60%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(238 47% 57%) 0%, hsl(328 85% 70%) 50%, hsl(210 100% 60%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(238 47% 57%) 0%, hsl(328 85% 70%) 100%);
+    --gradient-blob: radial-gradient(ellipse at center, hsl(238 47% 57% / 0.3) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsl(238 47% 57% / 0.1);
+    --shadow-card: 0 20px 60px hsl(238 47% 57% / 0.15);
+    --shadow-float: 0 30px 80px hsl(238 47% 57% / 0.2);
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 238 47% 65%;
+    --primary-foreground: 240 10% 4%;
+
+    --secondary: 240 5% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 4% 65%;
+
+    --accent: 328 85% 70%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 16%;
+    --input: 240 5% 16%;
+    --ring: 238 47% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+  
+  .gradient-bg {
+    background-image: var(--gradient-hero);
+  }
+  
+  .gradient-button {
+    background-image: var(--gradient-button);
+  }
+  
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-xl rounded-3xl border border-white/30;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .float-card {
+    @apply bg-white rounded-3xl border border-border;
+    box-shadow: var(--shadow-float);
+  }
+  
+  .blob-gradient {
+    background: var(--gradient-blob);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-12 {
+    transform: rotateY(-12deg) rotateX(8deg);
+  }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(-12deg) rotateX(8deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(-12deg) rotateX(8deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
