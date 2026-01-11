@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 const navItems = [
   { label: 'Product', href: '/' },
   { label: 'Features', href: '/features' },
+  { label: 'Employee Dashboard', href: '/employee-dashboard' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Resources', href: '#' },
+  { label: 'Why TeamPulse?', href: '/comparison' },
+  //{ label: 'Resources', href: '#' },
 ];
 
 const Header = () => {
@@ -59,8 +61,14 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="outline">Sign In</Button>
-          <Button>Get Started</Button>
+          <a 
+            href="https://github.com/akaashsashiraj/TeamPulse-LandingPage/releases/download/v1.0.0/Team.Pulse.Agent.zip" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full" // Ensures the link takes up the full width like the button
+          >
+          <Button>Download Now</Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}

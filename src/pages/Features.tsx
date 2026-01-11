@@ -6,6 +6,9 @@ import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import dashboardImage from '@/assets/dashboard-screenshot.png';
+import projectViewImage from '@/assets/Project View.png';
+import resourcePlanImage from '@/assets/Resource Plan.png';
+import teamManagementImage from '@/assets/Team Management.png';
 
 const FeatureHeroSection = () => {
   return (
@@ -56,7 +59,7 @@ const ZigZagFeatures = () => {
       id: 2,
       title: 'Native Time Tracking',
       description:
-        'Track every second with precision. Live timers on every task ensure accurate billing and resource management. No more manual time entries—just real-time accuracy that builds trust with your clients.',
+        'Track every second with precision. Live timers on every task ensure accurate billing and resource management. No more manual time entries just real-time accuracy that builds trust with your clients.',
       icon: Clock,
       alignment: 'right',
       color: 'bg-teampulse-purple',
@@ -66,7 +69,7 @@ const ZigZagFeatures = () => {
       id: 3,
       title: 'Integrated CRM & Invoicing',
       description:
-        'Close the loop seamlessly. Manage Leads and generate Invoices directly from your workspace without switching apps. Automate workflows from prospect to paid invoice—no context switching required.',
+        'Close the loop seamlessly. Manage Leads and generate Invoices directly from your workspace without switching apps. Automate workflows from prospect to paid invoice no context switching required.',
       icon: Briefcase,
       alignment: 'left',
       color: 'bg-teampulse-pink',
@@ -167,14 +170,16 @@ const AdminDashboard = () => {
         'Utilization reports',
         'Resource allocation',
       ],
+      image: resourcePlanImage,
     },
     {
       id: 'team',
       title: 'Team Management',
       icon: Users,
       description:
-        'Manage every team member with precision. Assign roles, set permissions, track performance metrics, and maintain detailed team profiles—all in one unified interface.',
+        'Manage every team member with precision. Assign roles, set permissions, track performance metrics, and maintain detailed team profiles all in one unified interface.',
       features: ['Role management', 'Permission control', 'Performance tracking', 'Team profiles'],
+      image: teamManagementImage,
     },
     {
       id: 'project',
@@ -183,6 +188,7 @@ const AdminDashboard = () => {
       description:
         'Get a comprehensive view of all projects in progress. Monitor milestones, track deliverables, manage budgets, and maintain complete visibility across your entire project portfolio.',
       features: ['Project overview', 'Milestone tracking', 'Budget management', 'Deliverables'],
+      image: projectViewImage,
     },
   ];
 
@@ -278,8 +284,15 @@ const AdminDashboard = () => {
                     ))}
                   </ul>
 
-                  <div className="mt-8 h-48 bg-gradient-to-br from-teampulse-purple/10 to-teampulse-pink/10 rounded-xl flex items-center justify-center border border-border">
-                    <p className="text-muted-foreground">Dashboard Preview</p>
+                  <div className="mt-8 relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-teampulse-purple/15 to-teampulse-pink/15 blur-2xl rounded-xl"></div>
+                    <div className="relative rounded-xl border border-border bg-background/70 p-3 md:p-4 shadow-card">
+                      <img
+                        src={tab.image}
+                        alt={`${tab.title} dashboard preview`}
+                        className="w-full max-h-[360px] object-contain rounded-lg"
+                      />
+                    </div>
                   </div>
                 </motion.div>
               )
@@ -398,10 +411,19 @@ const CTA = () => {
               Start Free Trial
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
+            <a 
+              href="https://github.com/akaashsashiraj/TeamPulse-LandingPage/releases/download/v1.0.0/Team.Pulse.Agent.zip" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="" 
+            >
             <Button size="lg" variant="outline">
               <Download className="w-4 h-4 mr-2" />
               Download App
             </Button>
+            </a>
+            
+            
           </div>
 
           <p className="text-sm text-muted-foreground mt-8">

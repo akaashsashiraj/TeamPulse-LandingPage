@@ -18,7 +18,7 @@ const DownloadSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 relative z-10"
+          className="text-center mb-16 gap-10 relative z-10"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4">
             Your Workspace,  <span className="gradient-text">Everywhere.</span>
@@ -46,20 +46,29 @@ const DownloadSection = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl font-black text-foreground">
+            <h2 className="text-3xl font-black gap-10 text-foreground">
               TeamPulse Agent
             </h2>
 
             {/* Description */}
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground gap-10">
               Please dowenload the <span className="font-semibold text-teampulse-purple">TeamPulse Agent</span> on your desktop to log in automatically.
             </p>
 
             {/* Download Button */}
+            <a 
+              href="https://github.com/akaashsashiraj/TeamPulse-LandingPage/releases/download/v1.0.0/Team.Pulse.Agent.zip" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full" // Ensures the link takes up the full width like the button
+              >
             <Button className="w-full h-12 rounded-xl text-base font-semibold gap-2" size="lg">
+              
               <Download className="w-5 h-5" />
               Download Agent
             </Button>
+            
+            </a>  
           </div>
         </motion.div>
       </div>

@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
-import { Activity, Clock, Briefcase, Users, ArrowRight } from 'lucide-react';
+import { Activity, Clock, Briefcase, Users, Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import dashboardImage from '@/assets/dashboard-screenshot.png';
+import timeTrackingImage from '@/assets/Time Traking.png';
+import crmLeadsImage from '@/assets/CRM and Leads.png';
+import resourcePlanImage from '@/assets/Resource Plan.png';
+import leaveManagerImage from '@/assets/Leave Manager.png';
 
 const FeaturesShowcase = () => {
   const features = [
@@ -9,24 +14,26 @@ const FeaturesShowcase = () => {
       headline: "Your Team's Pulse, Live.",
       subheadline: 'Eliminate the "What are you working on?" messages.',
       description:
-        "Get an instant read on your team's productivity with our signature Efficiency Score. See who is online, what tasks are active, and exactly how engaged your workforce is right now—without being invasive.",
+        "Get an instant read on your team's productivity with our signature Efficiency Score. See who is online, what tasks are active, and exactly how engaged your workforce is right now without being invasive.",
       bullets: ['Live Status Indicators (Online/Offline)', 'Dynamic Efficiency Percentages', 'Instant Task Visibility'],
       icon: Activity,
       color: 'from-teampulse-blue to-blue-400',
       alignment: 'left',
       stat: null,
+      image: dashboardImage,
     },
     {
       id: 2,
       headline: 'Every Second Counted. Every Billable Saved.',
       subheadline: "Native time tracking that doesn't feel like a chore.",
       description:
-        'Forget third-party timer apps. TeamPulse embeds precision timers directly into every task card. Whether it\'s a quick 12-minute update or a 3-hour deep work session, we capture the data you need for accurate client billing.',
+        'Forget third-party timer apps. TeamPulse embeds precision timers directly into every task card. Whether it\'s a quick 12-minute update or a 3 hour deep work session, we capture the data you need for accurate client billing.',
       bullets: null,
       icon: Clock,
       color: 'from-teampulse-purple to-purple-400',
       alignment: 'right',
       stat: 'Agencies track 20% more billable hours with TeamPulse.',
+      image: timeTrackingImage,
     },
     {
       id: 3,
@@ -39,6 +46,7 @@ const FeaturesShowcase = () => {
       color: 'from-teampulse-pink to-pink-400',
       alignment: 'left',
       stat: null,
+      image: crmLeadsImage,
     },
     {
       id: 4,
@@ -51,6 +59,20 @@ const FeaturesShowcase = () => {
       color: 'from-teampulse-green to-green-400',
       alignment: 'right',
       stat: null,
+      image: resourcePlanImage,
+    },
+    {
+      id: 5,
+      headline: 'Leave Management Made Simple.',
+      subheadline: 'Track time off without the back-and-forth emails.',
+      description:
+        'Empower your team to request leave with a single click. Admins can approve or reject requests instantly, view team availability calendars, and ensure no project deadlines are missed due to unexpected absences.',
+      bullets: null,
+      icon: Calendar,
+      color: 'from-orange-400 to-orange-600',
+      alignment: 'left',
+      stat: null,
+      image: leaveManagerImage,
     },
   ];
 
@@ -74,7 +96,7 @@ const FeaturesShowcase = () => {
             Everything you need to <span className="gradient-text">run your agency</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Four powerful features that work together to eliminate chaos and keep your team focused.
+            Five powerful features that work together to eliminate chaos and keep your team focused.
           </p>
         </motion.div>
 
@@ -160,18 +182,13 @@ const FeaturesShowcase = () => {
                       className={`absolute inset-0 bg-gradient-to-br ${feature.color} blur-2xl rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity`}
                     />
 
-                    {/* Placeholder card */}
-                    <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-96 flex items-center justify-center">
-                      <div className="text-center">
-                        <div
-                          className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mx-auto mb-6`}
-                        >
-                          <Icon className="w-12 h-12 text-white" />
-                        </div>
-                        <p className="text-muted-foreground text-sm font-medium">
-                          Feature Preview
-                        </p>
-                      </div>
+                    {/* Feature image */}
+                    <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 overflow-hidden">
+                      <img
+                        src={feature.image}
+                        alt={feature.headline}
+                        className="w-full h-auto rounded-xl object-contain"
+                      />
                     </div>
                   </div>
                 </motion.div>

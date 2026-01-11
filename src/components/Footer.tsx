@@ -5,7 +5,21 @@ const footerLinks = {
   'Use Cases': ['Project Management', 'CRM', 'Resource Planning', 'Invoicing', 'Time Tracking'],
   Resources: ['Blog', 'Guides', 'Help Center', 'Community', 'API'],
   Company: ['About', 'Careers', 'Press', 'Partners', 'Contact'],
-  Compare: ['vs Asana', 'vs Monday', 'vs Notion', 'vs Jira', 'vs Trello'],
+  Compare: ['vs Time Doctor', 'vs Hubstaff', 'vs Harvest', 'vs DeskTime', 'vs Clickup'],
+} as const;
+
+const getFooterLinkHref = (category: string, label: string) => {
+  if (category === 'Compare') {
+    const id =
+      label === 'vs Time Doctor' ? 'time-doctor' :
+      label === 'vs Hubstaff' ? 'hubstaff' :
+      label === 'vs Harvest' ? 'harvest' :
+      label === 'vs DeskTime' ? 'desktime' :
+      label === 'vs Clickup' ? 'clickup' :
+      '';
+    return id ? `/comparison#${id}` : '/comparison';
+  }
+  return '#';
 };
 
 const Footer = () => {
@@ -38,7 +52,7 @@ const Footer = () => {
                 {links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={getFooterLinkHref(category, link)}
                       className="text-background/60 hover:text-background transition-colors text-sm"
                     >
                       {link}

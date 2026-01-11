@@ -58,7 +58,7 @@ const CTABanner = ({
         className="relative rounded-3xl overflow-hidden group"
       >
         {/* Base Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-teampulse-purple via-teampulse-pink to-orange-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-600" />
         
         {/* Animated Radial Gradient Blobs */}
         <div className="absolute inset-0 overflow-hidden">
