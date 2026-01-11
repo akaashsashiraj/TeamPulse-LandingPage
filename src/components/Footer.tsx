@@ -1,5 +1,7 @@
 
 
+import logoImage from '@/assets/TeamPulseLogo.png';
+
 const footerLinks = {
   Product: ['Features', 'Integrations', 'Pricing', 'Changelog', 'Docs'],
   'Use Cases': ['Project Management', 'CRM', 'Resource Planning', 'Invoicing', 'Time Tracking'],
@@ -31,7 +33,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <a href="/" className="flex items-center gap-0 mb-6">
               <img
-                src="/src/assets/TeamPulseLogo.png"
+                src={logoImage}
                 alt="TeamPulse logo"
                 className="h-10 w-auto"
               />

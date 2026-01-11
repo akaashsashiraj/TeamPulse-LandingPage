@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import teamPulseLogo from '@/assets/TeamPulseLogo.png';
+import dashboardScreenshot from '@/assets/dashboard-screenshot.png';
 
 interface CTABannerProps {
   headline?: string;
@@ -152,7 +153,7 @@ const CTABanner = ({
         >
           <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
             <img
-              src="/src/assets/dashboard-screenshot.png"
+              src={dashboardScreenshot}
               alt="TeamPulse Dashboard"
               className="w-full h-auto"
             />
