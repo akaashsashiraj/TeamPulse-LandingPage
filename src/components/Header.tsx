@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import logoImage from '@/assets/TeamPulseLogo.png';
 
 const navItems = [
   { label: 'Product', href: '/' },
@@ -37,7 +38,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-0">
           <img
-            src="/src/assets/TeamPulseLogo.png"
+            src={logoImage}
             alt="TeamPulse logo"
             className="h-10 w-auto"
           />
