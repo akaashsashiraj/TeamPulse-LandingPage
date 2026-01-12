@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Employee Dashboard', href: '/employee-dashboard' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Why TeamPulse?', href: '/comparison' },
+  { label: 'Company', href: '/company' },
   //{ label: 'Resources', href: '#' },
 ];
 

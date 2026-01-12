@@ -21,6 +21,29 @@ const getFooterLinkHref = (category: string, label: string) => {
       '';
     return id ? `/comparison#${id}` : '/comparison';
   }
+  
+  if (category === 'Use Cases') {
+    const id =
+      label === 'Project Management' ? 'project-management' :
+      label === 'CRM' ? 'crm' :
+      label === 'Resource Planning' ? 'resource-planning' :
+      label === 'Invoicing' ? 'invoicing' :
+      label === 'Time Tracking' ? 'time-tracking' :
+      '';
+    return id ? `/features#${id}` : '/features';
+  }
+  
+  if (category === 'Company') {
+    const id =
+      label === 'About' ? 'about' :
+      label === 'Careers' ? 'careers' :
+      label === 'Press' ? 'press' :
+      label === 'Partners' ? 'partners' :
+      label === 'Contact' ? 'contact' :
+      '';
+    return id ? `/company#${id}` : '/company';
+  }
+  
   return '#';
 };
 

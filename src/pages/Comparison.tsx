@@ -209,10 +209,10 @@ const Comparison = () => {
       <Header />
       <main className="pt-28 pb-20">
         <section className="container mx-auto px-6">
-          <div className="relative overflow-hidden rounded-3xl border bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 text-white p-10 md:p-14 shadow-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(91,95,199,0.25),transparent_35%),_radial-gradient(circle_at_80%_30%,rgba(16,185,129,0.22),transparent_35%),_radial-gradient(circle_at_50%_80%,rgba(236,72,153,0.18),transparent_35%)]" />
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-teampulse-purple/90 via-slate-900 to-slate-900 text-white p-10 md:p-14 shadow-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(91,95,199,0.22),transparent_35%),_radial-gradient(circle_at_80%_30%,rgba(16,185,129,0.18),transparent_35%),_radial-gradient(circle_at_50%_80%,rgba(236,72,153,0.18),transparent_35%)]" />
             <div className="relative max-w-3xl space-y-6">
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-teal-100 border border-white/15">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-white border border-white/15">
                 Built for agency operators
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
@@ -223,7 +223,7 @@ const Comparison = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link to="/pricing">
-                  <Button size="lg" className="gap-2">
+                  <Button size="lg" className="gap-2 bg-white text-teampulse-purple hover:bg-white/90">
                     View pricing
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -243,16 +243,16 @@ const Comparison = () => {
         </section>
 
         <section className="container mx-auto px-6 mt-12">
-          <div className="sticky top-20 z-40">
-            <div className="flex items-center gap-4 overflow-x-auto rounded-2xl border bg-background/80 backdrop-blur px-4 py-3 shadow-sm">
+          <div className="sticky top-20 z-30">
+            <div className="flex items-center gap-3 overflow-x-auto rounded-2xl glass-card border border-border bg-background/90 backdrop-blur px-4 py-3 shadow-card">
               {navItems.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
                   className={`flex items-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors border ${
                     activeId === item.id
-                      ? 'bg-teal-100 text-teal-800 border-teal-200'
-                      : 'bg-muted/50 text-muted-foreground border-transparent hover:text-foreground'
+                      ? 'bg-teampulse-purple/15 text-foreground border-teampulse-purple/30 shadow-inner'
+                      : 'bg-muted/40 text-muted-foreground border-transparent hover:text-foreground'
                   }`}
                 >
                   <span className="h-2 w-2 rounded-full bg-teal-500" />
@@ -279,11 +279,11 @@ const Comparison = () => {
                   </div>
                   <h2 className="text-3xl md:text-4xl font-black mb-4">{section.headline}</h2>
                   <div className="space-y-3 text-base md:text-lg text-muted-foreground">
-                    <div className="rounded-xl border border-destructive/20 bg-destructive/5 p-4">
+                    <div className="rounded-xl border border-destructive/20 bg-destructive/5 p-4 shadow-sm">
                       <p className="font-semibold text-destructive mb-1">Their way</p>
                       <p>{section.pain}</p>
                     </div>
-                    <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                    <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
                       <p className="font-semibold text-emerald-700 mb-1">TeamPulse way</p>
                       <p className="text-foreground">{section.solution}</p>
                     </div>
@@ -291,7 +291,7 @@ const Comparison = () => {
                 </div>
 
                 <div className={`${isImageLeft ? 'order-2' : 'order-1'}`}>
-                  <div className="rounded-2xl border bg-card text-card-foreground shadow-xl p-4 md:p-6">
+                  <div className="rounded-2xl glass-card border border-border bg-background/80 backdrop-blur text-card-foreground shadow-card p-4 md:p-6">
                     {renderVisual(section.visual)}
                   </div>
                 </div>
@@ -301,16 +301,16 @@ const Comparison = () => {
         </section>
 
         <section className="container mx-auto px-6 mt-20">
-          <div className="rounded-3xl border bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-600 text-white p-10 md:p-14 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="rounded-3xl border border-border bg-gradient-to-r from-teampulse-purple via-indigo-600 to-purple-700 text-white p-10 md:p-14 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-wide text-white/80">Final CTA</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-white/80">Your Team's Pulse, Live.</p>
               <h3 className="text-3xl md:text-4xl font-black">Stop paying for 5 different apps.</h3>
               <p className="text-white/80 text-lg">
                 Consolidate your stack, keep privacy-first tracking, and bill confidently with verified time data.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" variant="secondary" className="bg-white text-purple-700 hover:bg-white/90">
+              <Button size="lg" variant="secondary" className="bg-white text-teampulse-purple hover:bg-white/90">
                 Start Migration
               </Button>
               <Link to="/pricing">
