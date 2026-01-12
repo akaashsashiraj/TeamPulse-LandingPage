@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -168,15 +169,29 @@ const Pricing = () => {
                   </div>
 
                   <div className="mt-auto">
-                    <Button
-                      variant={plan.highlight ? "default" : "outline"}
-                      className={`w-full ${
-                        plan.highlight ? "bg-teampulse-purple hover:bg-teampulse-purple/90" : ""
-                      }`}
-                    >
-                      {plan.cta}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    {plan.cta === "Contact sales" ? (
+                      <Link to="/company#contact">
+                        <Button
+                          variant={plan.highlight ? "default" : "outline"}
+                          className={`w-full ${
+                            plan.highlight ? "bg-teampulse-purple hover:bg-teampulse-purple/90" : ""
+                          }`}
+                        >
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button
+                        variant={plan.highlight ? "default" : "outline"}
+                        className={`w-full ${
+                          plan.highlight ? "bg-teampulse-purple hover:bg-teampulse-purple/90" : ""
+                        }`}
+                      >
+                        {plan.cta}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    )}
                     <p className="text-xs text-muted-foreground text-center mt-3">
                       {isCustom ? "Talk with our team for a custom quote." : billingCycle === "yearly" ? "Billed annually" : "Billed monthly"}
                     </p>
@@ -191,10 +206,12 @@ const Pricing = () => {
             <p className="text-lg text-foreground mb-4">
               We can tailor a rollout plan for your team size, security requirements, and migration needs.
             </p>
-            <Button variant="outline" className="border-teampulse-purple/40 text-teampulse-purple">
-              Talk to sales
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <Link to="/company#contact">
+              <Button variant="outline" className="border-teampulse-purple/40 text-teampulse-purple">
+                Talk to sales
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </div>
 
           <CTABanner
